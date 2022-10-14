@@ -11,7 +11,7 @@ builder.Services.AddSwaggerGen(options=>{
 builder.Services.AddSignalR();
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
 {
-    policy.WithOrigins(Environment.GetEnvironmentVariable("ALLOWED_ORIGINS")!.Split(" "))
+    policy.WithOrigins(Environment.GetEnvironmentVariable("ALLOWED_ORIGINS")!.Split(","))
     .AllowAnyMethod()
     .AllowAnyHeader()
     .AllowCredentials();
